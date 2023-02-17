@@ -14,7 +14,7 @@ const InputStyled = styled.input``
 const Error = styled(Text)`
   color: ${color.error};
   &:empty {
-    visibility: hidden;
+    opacity: 0;
   }
 `
 
