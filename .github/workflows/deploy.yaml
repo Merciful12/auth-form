@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: pnpm build
         env:
-          SITE_BASE: {{ vars.SITE_BASE }}
+          SITE_BASE: ${{ vars.SITE_BASE }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
