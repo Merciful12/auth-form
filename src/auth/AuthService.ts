@@ -3,7 +3,7 @@ import type { Credentials } from './types'
 
 const auth = async (credentials: Credentials) => {
   await wait(2000)
-  console.log(credentials)
+  alert(JSON.stringify(credentials))
 }
 
 export { auth }

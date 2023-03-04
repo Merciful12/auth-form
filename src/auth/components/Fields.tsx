@@ -14,6 +14,8 @@ const EmailField: FC<Props> = ({ disabled }) => {
   const { value, error } = useStore($email)
   return (
     <Input
+      autoCapitalize="off"
+      autoComplete="username"
       disabled={disabled}
       error={error}
       label="Email"
@@ -28,6 +30,8 @@ const PasswordField: FC<Props> = ({ disabled }) => {
   const { value, error } = useStore($password)
   return (
     <Input
+      autoCapitalize="off"
+      autoComplete="current-password"
       disabled={disabled}
       error={error}
       label="Password"

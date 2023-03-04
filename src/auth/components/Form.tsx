@@ -6,7 +6,13 @@ import { $loading, auth } from '../AuthModel'
 import { Button } from '../../common/ui/Button'
 import { EmailField, PasswordField } from './Fields'
 
-const FormStyled = styled.form``
+const FormStyled = styled.form`
+  width: 100%;
+  max-width: 300px;
+  > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+`
 
 const Form = () => {
   const loading = useStore($loading)
@@ -20,7 +26,7 @@ const Form = () => {
     <FormStyled noValidate onSubmit={onSubmit}>
       <EmailField disabled={loading} />
       <PasswordField disabled={loading} />
-      <Button disabled={loading} type="submit">
+      <Button loading={loading} stretch disabled={loading} type="submit">
         Login
       </Button>
     </FormStyled>

@@ -27,7 +27,7 @@ const auth = async () => {
   const email = $email.get().value
   const password = $password.get().value
   if (!isEmail(email)) {
-    $email.setKey('error', 'Incorrect email.')
+    $email.setKey('error', 'Incorrect email. Please follow the format "example@email.com".')
     return
   }
   try {
