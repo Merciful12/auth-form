@@ -21,15 +21,15 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'dist'
         
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: 'dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
