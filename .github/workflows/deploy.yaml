@@ -15,6 +15,7 @@ jobs:
         with:
           node-version-file: .node-version
           cache: pnpm
+      - run: corepack enable
       - name: Install deps
         run: pnpm install
       - name: Build
