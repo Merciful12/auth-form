@@ -11,6 +11,7 @@
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
   },
+  "packageManager": "pnpm@7.27.0",
   "dependencies": {
     "@linaria/babel-preset": "^4.4.1",
     "@linaria/core": "^4.2.6",
