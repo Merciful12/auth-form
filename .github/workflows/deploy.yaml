@@ -11,11 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+      - uses: actions/setup-node@v3.6.0
         with:
           node-version-file: .node-version
           cache: pnpm
-      - run: corepack enable
       - name: Install deps
         run: pnpm install
       - name: Build
