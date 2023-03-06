@@ -1,9 +1,13 @@
 const font = {
-  fontFamily: 'system-ui',
+  body: {
+    fontFamily: 'system-ui',
+    fontSize: 16,
+    lineHeight: '24px',
+  },
 }
 
 const color = {
-  error: '#FF0000',
+  error: '#DD1616',
   text: '#1f1f1f',
   textLight: '#667380',
   primary: '#6EBD0A',

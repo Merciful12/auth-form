@@ -13,7 +13,7 @@ const reset = `
     }
     *:focus,
     *:focus-visible {
-      outline: none !important;
+      outline: none;
     }
   }
 `

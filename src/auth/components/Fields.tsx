@@ -4,11 +4,11 @@ import { useStore } from '@nanostores/react'
 import { Input } from '../../common/ui/Input'
 import { $email, changeEmail, $password, changePassword } from '../AuthModel'
 
-type Disabled = {
+type DisabledProp = {
   disabled?: boolean
 }
 
-type Props = Disabled
+type Props = DisabledProp
 
 const EmailField: FC<Props> = ({ disabled }) => {
   const { value, error } = useStore($email)

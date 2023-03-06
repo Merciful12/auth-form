@@ -2,23 +2,26 @@ import { ChangeEventHandler, FC, HTMLInputTypeAttribute } from 'react'
 import { styled } from '@linaria/react'
 
 import { Text } from './Text'
-import { color } from '../../app/styles/constants'
+import { color, font } from '../../app/styles/constants'
 
+type ErrorProp = {
+  error?: string
+}
 const Container = styled.label`
   display: block;
 `
 const Label = styled(Text)`
-  margin-left: 16px;
+  display: inline-block;
+  padding-left: 16px;
   margin-bottom: 8px;
-  font-size: 18px;
 `
 
-const InputStyled = styled.input`
+const InputStyled = styled.input<ErrorProp>`
+  color: ${(props) => (props.error ? color.error : 'unset')};
   width: 100%;
   border: 1px solid transparent;
   padding: 16px;
-  font-size: 16px;
-  line-height: 24px;
+  ${font.body};
   border-radius: 12px;
   background-color: ${color.input};
   &:focus-visible {
@@ -27,17 +30,20 @@ const InputStyled = styled.input`
 `
 
 const Error = styled(Text)`
+  display: inline-block;
   margin-top: 8px;
-  margin-left: 16px;
+  padding-left: 16px;
   color: ${color.error};
+  :empty {
+    display: none;
+  }
 `
 
-type Props = {
+type Props = ErrorProp & {
   label: string
   type: HTMLInputTypeAttribute
   onChange: (text: string) => void
   value: string
-  error?: string
   disabled?: boolean
   className?: string
   autoComplete?: string
@@ -50,9 +56,11 @@ const Input: FC<Props> = ({ label, onChange, error, className, ...inputProps }) 
 
   return (
     <Container className={className}>
-      <Label>{label}</Label>
-      <InputStyled {...inputProps} aria-invalid={!!error} onChange={onInputChange} />
-      <Error role="alert">{error}</Error>
+      <Label as="span">{label}</Label>
+      <InputStyled {...inputProps} aria-invalid={!!error} onChange={onInputChange} error={error} />
+      <Error as="p" role="alert">
+        {error}
+      </Error>
     </Container>
   )
 }

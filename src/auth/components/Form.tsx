@@ -8,10 +8,10 @@ import { EmailField, PasswordField } from './Fields'
 
 const FormStyled = styled.form`
   width: 100%;
-  max-width: 300px;
-  > *:not(:last-child) {
-    margin-bottom: 16px;
-  }
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  row-gap: 16px;
 `
 
 const Form = () => {
