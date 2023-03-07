@@ -7,6 +7,7 @@ import { Button } from '../../common/ui/Button'
 import { EmailField, PasswordField } from './Fields'
 
 const FormStyled = styled.form`
+  padding: 0 16px;
   width: 100%;
   display: flex;
   flex-direction: column;
