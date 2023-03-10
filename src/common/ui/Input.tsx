@@ -64,5 +64,5 @@ const Input: FC<Props> = ({ label, onChange, error, className, ...inputProps }) 
     </Container>
   )
 }
-console.log(color)
+
 export { Input }
