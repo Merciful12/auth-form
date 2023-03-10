@@ -1,20 +1,25 @@
 {
   "name": "auth-form",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "postinstall": "pnpm exec simple-git-hooks",
+    "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
   },
+  "packageManager": "pnpm@7.27.0",
   "dependencies": {
     "@linaria/babel-preset": "^4.4.1",
     "@linaria/core": "^4.2.6",
     "@linaria/react": "^4.3.4",
+    "@nanostores/react": "^0.4.1",
+    "is-email": "^1.0.2",
+    "nanostores": "^0.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -23,6 +28,7 @@
   },
   "devDependencies": {
     "@linaria/vite": "^4.2.7",
+    "@types/node": "^18.14.6",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
